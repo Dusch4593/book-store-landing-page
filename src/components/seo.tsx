@@ -33,7 +33,7 @@ function SEO({ description='', lang='en', meta=[], title }: Props) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  debugger
+  
   return (
     <Helmet
       htmlAttributes={{

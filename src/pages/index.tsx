@@ -1,13 +1,13 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Storefront from "../components/storefront"
 import SEO from "../components/seo"
+import Content from "../components/Content"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Storefront hours={[]} records={[]} />
+    <Content />
   </Layout>
 )
 

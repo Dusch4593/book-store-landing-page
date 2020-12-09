@@ -1,4 +1,6 @@
 import React from "react"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from 'gatsby'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -11,12 +13,28 @@ import React from "react"
  * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+
+
 const HeroImage = () => {
+  const query = useStaticQuery(graphql`
+  query MyQuery {
+    file(relativePath: {eq: "bookshelf.jpg"}) {
+      childImageSharp {
+        resize(height: 300, width: 300) {
+          src
+        }
+      }
+    }
+  }
+`)
+  
   return (
     <>
-      <strong>Image Code Here</strong>
+      <img src={query.file.childImageSharp.resize.src} />
     </>
   )
 }
+
+
 
 export default HeroImage

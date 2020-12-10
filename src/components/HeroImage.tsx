@@ -1,5 +1,4 @@
 import React from "react"
-import Img from "gatsby-image"
 import { useStaticQuery, graphql } from 'gatsby'
 
 /*
@@ -27,10 +26,12 @@ const HeroImage = () => {
     }
   }
 `)
+
+const imageSrc: string = query.file.childImageSharp.resize.src
   
   return (
     <>
-      <img src={query.file.childImageSharp.resize.src} />
+      <img src={imageSrc} />    
     </>
   )
 }

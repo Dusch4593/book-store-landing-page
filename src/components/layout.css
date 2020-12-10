@@ -595,3 +595,14 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* Custom Styles */
+
+.body {
+  text-align: center;
+}
+
+.features-list {
+  text-align: left;
+  margin: auto;
+}

@@ -602,7 +602,22 @@ pre tt:after {
   text-align: center;
 }
 
+.features-container {
+  width: 55%;
+  margin: auto;
+}
+
 .features-list {
   text-align: left;
   margin: auto;
+}
+
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }

@@ -33,7 +33,7 @@ const Layout = ({ children }: Props) => {
   const siteTitle: string = data.site.siteMetadata?.title
   
   return (
-    <>
+    <React.Fragment>
       <Header siteTitle={siteTitle || `Title`} />
       <div
         style={{
@@ -45,7 +45,7 @@ const Layout = ({ children }: Props) => {
         <main>{children}</main>
       </div>
       <Footer />
-    </>
+    </React.Fragment>
   )
 }
 

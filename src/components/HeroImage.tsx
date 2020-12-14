@@ -19,7 +19,7 @@ const HeroImage = () => {
   query MyQuery {
     file(relativePath: {eq: "bookshelf.jpg"}) {
       childImageSharp {
-        resize(height: 300, width: 300) {
+        resize(width: 800, height: 200) {
           src
         }
       }
@@ -27,12 +27,16 @@ const HeroImage = () => {
   }
 `)
 
+
+
 const imageSrc: string = query.file.childImageSharp.resize.src
   
   return (
-    <>
-      <img src={imageSrc} />    
-    </>
+    <React.Fragment>
+      <div className='hero-image-container'>
+        <img className='hero-image' src={imageSrc} /> 
+      </div>
+    </React.Fragment>
   )
 }
 

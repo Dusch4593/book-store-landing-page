@@ -9,7 +9,7 @@ const Header = ({ siteTitle }: Props) => (
   <header
     style={{
       background: `#0069ff`,
-      marginBottom: `1.45rem`,
+      textAlign: 'center'
     }}
   >
     <div

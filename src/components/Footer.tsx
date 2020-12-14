@@ -6,7 +6,11 @@ const Footer = () => {
         <footer
     style={{
       background: `#0069ff`,
+      bottom: '0',
       marginBottom: `1.45rem`,
+      position: 'fixed',
+      textAlign: 'center',
+      width: '100%'
     }}
   >
     <div

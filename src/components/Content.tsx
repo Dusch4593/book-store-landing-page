@@ -4,10 +4,10 @@ import HeroImage from "./HeroImage"
 
 const Content = () => {
     return (
-        <>
+        <React.Fragment>
             <HeroImage /> <br />
             <Features />
-        </>
+        </React.Fragment>
     )
 }
 

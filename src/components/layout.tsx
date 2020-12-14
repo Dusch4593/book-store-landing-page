@@ -30,9 +30,11 @@ const Layout = ({ children }: Props) => {
     }
   `)
 
+  const siteTitle: string = data.site.siteMetadata?.title
+  
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={siteTitle || `Title`} />
       <div
         style={{
           margin: `0 auto`,
@@ -41,8 +43,8 @@ const Layout = ({ children }: Props) => {
         }}
       >
         <main>{children}</main>
-        <Footer />
       </div>
+      <Footer />
     </>
   )
 }

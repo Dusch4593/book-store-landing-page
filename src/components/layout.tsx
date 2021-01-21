@@ -6,20 +6,17 @@
  */
 
 import React, { ReactNode } from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./Header"
-import Footer from "./Footer"
+import Header from "./header"
 import "./layout.css"
 
-// defines the "shape" of the Props type, which
-// contains a children key of type ReactNode (imported from 'react')
-interface Props {
+interface LayoutProps {
   children: ReactNode
 }
 
-// the destructured children prop is explicity defined as being of type Props
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,11 +27,11 @@ const Layout = ({ children }: Props) => {
     }
   `)
 
-  const siteTitle: string = data.site.siteMetadata?.title
-  
+  const siteTitle: string = data.site.siteMetadata?.title || `Title`
+
   return (
-    <React.Fragment>
-      <Header siteTitle={siteTitle || `Title`} />
+    <>
+      <Header siteTitle={siteTitle} />
       <div
         style={{
           margin: `0 auto`,
@@ -43,10 +40,22 @@ const Layout = ({ children }: Props) => {
         }}
       >
         <main>{children}</main>
+        <footer
+          style={{
+            marginTop: `2rem`,
+          }}
+        >
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </footer>
       </div>
-      <Footer />
-    </React.Fragment>
+    </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

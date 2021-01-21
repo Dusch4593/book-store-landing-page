@@ -10,9 +10,9 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 interface SEOProps {
-  description?: string
-  lang?: string
-  meta?: Array<{name: string, content: string}>
+  description?: string,
+  lang?: string,
+  meta?: Array<{name: string, content: string}>,
   title: string
 }
 
@@ -40,7 +40,7 @@ function SEO({ description='', lang='en', meta=[], title }: SEOProps) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : 'null'}
       meta={[
         {
           name: `description`,

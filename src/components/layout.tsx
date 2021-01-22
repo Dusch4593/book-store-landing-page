@@ -6,7 +6,6 @@
  */
 
 import React, { ReactNode } from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -17,14 +16,14 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
+  const data: any = useStaticQuery(graphql`
+  query MyQuery {
+    site {
+      siteMetadata {
+        title
       }
     }
+  }
   `)
 
   const siteTitle: string = data.site.siteMetadata?.title || `Title`
@@ -52,10 +51,6 @@ const Layout = ({ children }: LayoutProps) => {
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
